@@ -121,7 +121,7 @@ class Database:
         conn = self.get_connection()
         cursor = conn.cursor()
         
-        query = "SELECT * FROM workstations"
+        query = "SELECT * FROM workstations ORDER BY hostname"
         params = []
         
         if filters and filters.get('field') and filters.get('value'):
