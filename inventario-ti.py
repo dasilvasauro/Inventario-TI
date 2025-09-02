@@ -1067,13 +1067,13 @@ class EditWorkstationWindow(ctk.CTkToplevel):
         row += 1
         
         # Botões
-        button_frame = ctk.CTkFrame(self.scrollable_frame)
+        button_frame = ctk.CTkFrame(self.scrollable_frame, fg_color="transparent")
         button_frame.grid(row=row, column=0, columnspan=2, pady=20, sticky="ew")
         
-        self.save_btn = ctk.CTkButton(button_frame, text="Salvar", command=self.save)
+        self.save_btn = ctk.CTkButton(button_frame, text="Salvar", command=self.save, fg_color="#A0D2F1", hover_color="#9CCDE3", border_color="#75A1BC", border_width=1, text_color="black")
         self.save_btn.pack(side="left", padx=10)
         
-        self.cancel_btn = ctk.CTkButton(button_frame, text="Cancelar", command=self.on_close, fg_color="gray")
+        self.cancel_btn = ctk.CTkButton(button_frame, text="Cancelar", command=self.on_close, fg_color="#F1F1F1", hover_color="#DADADA", border_color="#7C7C7C", border_width=1, text_color="black")
         self.cancel_btn.pack(side="left", padx=10)
     
     def create_field(self, label, row, readonly=False):
@@ -1114,8 +1114,7 @@ class EditWorkstationWindow(ctk.CTkToplevel):
         self.fields['hostname'].configure(state="normal")
         self.fields['hostname'].insert(0, self.data['hostname'])
         if self.is_edit:
-            self.fields['hostname'].configure(state="readonly")
-        
+            self.fields['hostname'].configure(state="readonly", text_color="#7C7C7C")
         self.fields['usuario'].insert(0, self.data['usuario'] or "")
         self.fields['local'].set(self.data['local'])
         self.fields['sist_oper'].set(self.data['sist_oper'])
@@ -1269,13 +1268,13 @@ class EditAtivoWindow(ctk.CTkToplevel):
         row += 1
         
         # Botões
-        button_frame = ctk.CTkFrame(self.main_frame)
+        button_frame = ctk.CTkFrame(self.main_frame, fg_color="transparent")
         button_frame.grid(row=row, column=0, columnspan=2, pady=20, sticky="ew")
         
-        self.save_btn = ctk.CTkButton(button_frame, text="Salvar", command=self.save)
+        self.save_btn = ctk.CTkButton(button_frame, text="Salvar", command=self.save, fg_color="#A0D2F1", hover_color="#9CCDE3", border_color="#75A1BC", border_width=1, text_color="black")
         self.save_btn.pack(side="left", padx=10)
         
-        self.cancel_btn = ctk.CTkButton(button_frame, text="Cancelar", command=self.on_close, fg_color="gray")
+        self.cancel_btn = ctk.CTkButton(button_frame, text="Cancelar", command=self.on_close, fg_color="#F1F1F1", hover_color="#DADADA", border_color="#7C7C7C", border_width=1, text_color="black")
         self.cancel_btn.pack(side="left", padx=10)
         
         self.main_frame.grid_columnconfigure(1, weight=1)
@@ -1423,7 +1422,7 @@ class DuplicateWorkstationWindow(ctk.CTkToplevel):
         self.duplicate_btn = ctk.CTkButton(button_frame, text="Duplicar", command=self.duplicate)
         self.duplicate_btn.pack(side="left", padx=10)
         
-        self.cancel_btn = ctk.CTkButton(button_frame, text="Cancelar", command=self.on_close, fg_color="gray")
+        self.cancel_btn = ctk.CTkButton(button_frame, text="Cancelar", command=self.on_close, fg_color="#F1F1F1", hover_color="#DADADA", border_color="#7C7C7C", border_width=1, text_color="black")
         self.cancel_btn.pack(side="left", padx=10)
     
     def duplicate(self):
